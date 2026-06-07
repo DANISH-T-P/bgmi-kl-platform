@@ -4,19 +4,19 @@
 
 This document defines the source control strategy for BGMI-KL.
 
+For detailed branch setup, naming examples, environment mapping, and PR templates, see [BRANCHING.md](./BRANCHING.md).
+
 ---
 
 # Branch Structure
 
-main
-
-develop
-
-feature/*
-
-hotfix/*
-
-release/*
+| Branch | Role |
+|--------|------|
+| `main` | Production-ready releases |
+| `develop` | Feature integration |
+| `feature/*` | New features and pages |
+| `hotfix/*` | Urgent production fixes |
+| `release/*` | Release preparation and QA |
 
 ---
 
