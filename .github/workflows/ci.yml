@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run lint
+
+      - run: npm run type-check
+
+      - run: npm run build
+        env:
+          NEXT_PUBLIC_SITE_URL: https://bgmi-kl.vercel.app
+          NEXT_PUBLIC_WHATSAPP_URL: https://chat.whatsapp.com/example
+          NEXT_PUBLIC_INSTAGRAM_URL: https://instagram.com/bgmikl
+          NEXT_PUBLIC_CONTACT_EMAIL: contact@bgmi-kl.com
