@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-primary: #090909;
+  --color-bg-secondary: #151515;
+  --color-accent-primary: #8ebf3d;
+  --color-accent-secondary: #5f7d28;
+  --color-accent-gold: #d89b3c;
+  --color-text-primary: #e9e5dc;
+  --color-text-secondary: #8d8d8d;
+
+  --font-heading: var(--font-bebas-neue);
+  --font-body: var(--font-inter);
+
+  --radius-card: 12px;
+  --radius-button: 10px;
+  --radius-input: 10px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--color-accent-primary) 35%, transparent);
+  color: var(--color-text-primary);
+}
+
+.tactical-grid {
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--color-accent-primary) 8%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--color-accent-primary) 8%, transparent) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
